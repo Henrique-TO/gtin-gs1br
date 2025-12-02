@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: gtin-gs1br
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      client_id:
+        sync: false
+      client_secret:
+        sync: false
+      username:
+        sync: false
+      password:
+        sync: false
